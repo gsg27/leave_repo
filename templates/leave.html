@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Dashboard: {{ f_id }}</title>
+</head>
+
+<body>
+
+    <div><a class="btn btn-danger" style="float:right; margin-right: 60px; margin-top: 5px" href="{% url 'logout' %}"> Logout </a></div>
+    <center>
+        <h1>Welcome {{ user.username }}!</h1>
+   
+      <h2>Apply For Leave</h2><br>
+        
+        <!-- <p>From Date
+        <input type="date" {{form.date_from }}></p><br>
+        <p>To Date
+        <input type="date" {{form.date_to }}></p><br>
+        <p>Reason
+        <input type="textarea" {{form.reason}}> </p><br> -->
+        <form action="/leave" method="POST">
+        {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+        </form>
+      </center>
+</body>
+
+</html>

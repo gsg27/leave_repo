@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>Local Library</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- Add additional CSS in static file -->
+  <!-- {% load static %}
+
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}"> -->
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+                            
+              <ul class="navbar-nav bd-navbar-nav flex-row">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/dashboard">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="/leave">Request for Leave</a>
+                </li> -->
+                </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <div><a class="btn btn-danger" style="float:right; margin-right: 60px; margin-top: 5px" href="{% url 'logout' %}"> Logout </a></div>
+              </form>
+            </div>
+          </nav>
+      {% block content %}
+        {% endblock %}
+</body>
+</html>

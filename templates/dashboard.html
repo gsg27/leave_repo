@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}<title>Dashboard: {{ f_id }}</title>{% endblock %}
+
+{% block content %}
+    
+    <center>
+        <h1>Welcome {{ user.username }}!</h1>
+        <a href="/leave"><input type=button value='Apply for leave'></a>
+        <a href="/status"><input type=button value='Check Leave Status'></a>
+    </center>
+      {% endblock %}
